@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
 
-<h1>My First Heading</h1>
+    <div id="lightningout"></div>
 
-<p>My first paragraph.</p>
-
-</body>
+    <script src="https://credijusto--uat.sandbox.lightning.force.com/lightning/lightning.out.js"></script>
+    <script>
+      $Lightning.use(
+        'c:externalsalesforcecovalto_app', // name of the Lightning app
+        function () {
+          // Callback once framework and app loaded
+          $Lightning.createComponent(
+            'c:externalsalesforcecovalto_lwc', // top-level component of your app
+            {}, // attributes to set on the component when created
+            'lightningout', // the DOM location to insert the component
+            function (cmp) {
+              // callback when component is created and active on the page
+            }
+          );
+        },
+        'https://credijusto--uat--c.sandbox.vf.force.com/apex/externalsalesforcecovalto_vf' // Site endpoint
+      );
+    </script>
+  </body>
 </html>
