@@ -37,7 +37,6 @@
 
         $Lightning.use(
             appName, // name of the Lightning app,
-            authToken,
             function () {
                 // Callback once framework and app loaded
                 $Lightning.createComponent(
@@ -49,7 +48,8 @@
                     }
                 );
             },
-            lightningEndpoint
+            lightningEndpoint,
+            authToken
         );
     </script>
 </html>
