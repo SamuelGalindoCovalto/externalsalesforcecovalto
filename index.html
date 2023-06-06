@@ -1,30 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
+<html>
 
-    <div id="lightningout"></div>
+    <style>
+        a {
+            color: orange;
+        }
+    </style>
 
-    <script src="https://credijusto--uat.sandbox.lightning.force.com/lightning/lightning.out.js"></script>
+    <script src="https://credijusto--uat.sandbox.my.site.com/lightning/lightning.out.js"></script>
+
+    <div data-lightning-out="true"></div>
+
     <script>
-      $Lightning.use(
-        'c:externalsalesforcecovalto_app', // name of the Lightning app
-        function () {
-          // Callback once framework and app loaded
-          $Lightning.createComponent(
-            'c:externalsalesforcecovalto_lwc', // top-level component of your app
-            {}, // attributes to set on the component when created
-            'lightningout', // the DOM location to insert the component
-            function (cmp) {
-              // callback when component is created and active on the page
-            }
-          );
-        },
-        'https://credijusto--uat--c.sandbox.vf.force.com/apex/externalsalesforcecovalto_vf' // Site endpoint
-      );
+        const appName ='c:externalsalesforcecovalto_app';
+        const componentName = 'c:externalsalesforcecovalto_lwc';
+        const lightningEndpoint = 'https://credijusto--uat.sandbox.my.site.com';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {
+
+        };
+
+        $Lightning.use(
+            appName, // name of the Lightning app
+            function () {
+                // Callback once framework and app loaded
+                $Lightning.createComponent(
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function (cmp) {
+                        console.log('lightning component created');
+                    }
+                );
+            },
+            lightningEndpoint
+        );
     </script>
-  </body>
 </html>
