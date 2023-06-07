@@ -13,7 +13,7 @@
     <script>
         const appName ='c:outsalesforceapp';
         const componentName = 'c:documentoGenerico_lwc';
-        const lightningEndpoint = 'https://credijusto--uat.sandbox.my.site.com';
+        const lightningEndpoint = 'https://credijusto--uat.sandbox.lightning.force.com';
         const targetElement = document.querySelector("[data-lightning-out]");
         const componentAttributes = {
             "recordId":"0067A00000BflQFQAZ",
@@ -48,8 +48,8 @@
                     }
                 );
             },
-            lightningEndpoint
-            //authToken
+            lightningEndpoint,
+            authToken
         );
     </script>
 </html>
