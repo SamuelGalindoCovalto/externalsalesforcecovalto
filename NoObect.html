@@ -1,0 +1,43 @@
+<html>
+
+    <style>
+        a {
+            color: orange;
+        }
+    </style>
+
+    <script src="https://credijusto--uat.sandbox.lightning.force.com/lightning/lightning.out.js"></script>
+
+    <div data-lightning-out="true"></div>
+
+    <script>
+        const appName ='c:outsalesforcenoobjectapp';
+        const componentName = 'c:externalsalesforcecovalto_lwc';
+        const lightningEndpoint = 'https://credijusto--uat.sandbox.lightning.force.com';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {
+            "recordId":"0067A00000BflQFQAZ",
+            "objectApiName":"Opportunity",
+            "CampoOportunidad__Str":"Id",
+        };
+        const authToken = '00D7A0000009w5L!ARQAQKcEorzKIJO3Dn.Og24LSWYdfRAiuUAqMD3C8bIClDgW90AYnVA0sY1HxBRnm0HA040UEi8LaxgzGllhbe6MDn4xxUXJ';
+
+        $Lightning.use(
+            appName, // name of the Lightning app,
+            function () {
+                // Callback once framework and app loaded
+                $Lightning.createComponent(
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function (cmp) {
+                        console.log('lightning component created');
+                    }
+                );
+            },
+            lightningEndpoint,
+            authToken
+        );
+    </script>
+    TEST NO OBJECT
+</html>
