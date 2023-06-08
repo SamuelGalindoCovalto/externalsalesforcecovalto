@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    </head>
+    <style>
+        a {
+            color: orange;
+        }
+    </style>
+
+    <script src="	https://credijusto--uat.sandbox.my.site.com/lightning/lightning.out.js"></script>
+
+    <div data-lightning-out="true"></div>
+
+    <script>
+        const appName ='c:outsalesforceapp';
+        const componentName = 'c:documentoGenerico_lwc';
+        const lightningEndpoint = 'https://credijusto--uat.sandbox.my.site.com';
+        const targetElement = document.querySelector("[data-lightning-out]");
+        const componentAttributes = {
+            "recordId":"0067A00000BflQFQAZ",
+            "objectApiName":"Opportunity",
+            "Open_Section__Str":"Opp_Sec",
+            "Opportunity__Bln":true,
+            "Persona__Bln":true,
+            "Property__Bln":true,
+            "Estado_de_Cuenta__Bln":true,
+            "EditarDoc__Bln":true,
+            "VisualizarDoc__Bln":true,
+            "CargarDoc__Bln":true,
+            "LinkDoc__Bln":false,
+            "EliminarDoc__Bln":false,
+            "DetalleFirma__Bln":true,
+            "EnviarDocsFirma__Bln":true,
+            "Perfiles__Str":"Todos",
+            "CampoOportunidad__Str":"Id",
+        };
+
+        $Lightning.use(
+            appName, // name of the Lightning app,
+            function () {
+                // Callback once framework and app loaded
+                $Lightning.createComponent(
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function (cmp) {
+                        console.log('lightning component created');
+                    }
+                );
+            },
+            lightningEndpoint
+        );
+    </script>
+    TEST 3
+</html>
