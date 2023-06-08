@@ -33,7 +33,8 @@
             "Perfiles__Str":"Todos",
             "CampoOportunidad__Str":"Id",
         };        
-
+        const authToken = '00D7A0000009w5L!ARQAQF4Y.n87YaYEWZoNIwxgwdC7DJnBeq2Zo.irTA73nUt8UXSeDe9O_RcJ.CHyYiYIEpQiXUBwT_9uRy1tT6cjESzNpwzF';
+        
         $Lightning.use(
             appName, // name of the Lightning app,
             function () {
@@ -47,7 +48,8 @@
                     }
                 );
             },
-            lightningEndpoint
+            lightningEndpoint,
+            authToken
         );
     </script>
     TEST NO OBJECT 2
