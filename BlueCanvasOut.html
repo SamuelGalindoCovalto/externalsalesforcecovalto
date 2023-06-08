@@ -36,6 +36,7 @@
             "CampoOportunidad__Str":"Id",
         };
         const authToken = '00D7A0000009w5L!ARQAQKne_qAkaMZtwtrVAEIW7FA0y15Ann49itC6Ec0pdy6QcIUayPcQV28TPZHfsfl9XNmZ7DzLX_ROFWu.DHpG11vz6e0N';
+        const tokenTest = "Bearer "+"00D7A0000009w5L!ARQAQKne_qAkaMZtwtrVAEIW7FA0y15Ann49itC6Ec0pdy6QcIUayPcQV28TPZHfsfl9XNmZ7DzLX_ROFWu.DHpG11vz6e0N";
 
         $Lightning.use(
             appName, // name of the Lightning app,
@@ -51,7 +52,7 @@
                 );
             },
             lightningEndpoint,
-            authToken
+            tokenTest
         );
     </script>
     TEST 3
